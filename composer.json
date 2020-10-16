@@ -1,0 +1,23 @@
+{
+    "name": "ange/qwamplify",
+    "authors": [
+        {
+            "name": "Zarwine",
+            "email": "ange_550@hotmail.com"
+        }
+    ],
+    "require": {
+        "symfony/http-foundation": "^5.1",
+        "symfony/routing": "^5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests/"
+        }
+    }
+}

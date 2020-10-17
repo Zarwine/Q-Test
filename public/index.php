@@ -20,7 +20,13 @@ $matcher = new UrlMatcher($routes, $context);
 try {
     $resultat = ($matcher->match($request->getPathInfo()));
     $request->attributes->add($resultat);
-    $response = call_user_func($resultat['_controller'], $request);
+
+    $className = array_key_first($resultat["_controller"]);
+    $methodName = $resultat["_controller"][$className];
+
+    $controller = [new $className, $methodName];
+
+    $response = call_user_func($controller, $request);
 } catch (ResourceNotFoundException $exception) {
     $response = new Response('La page demandée n\'existe pas', 404);
 } catch (Exception $exception) {

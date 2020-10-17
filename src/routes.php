@@ -7,13 +7,13 @@ use Symfony\Component\Routing\RouteCollection;
 
 $routes = new RouteCollection();
 $routes->add('home', new Route('/home', [
-    '_controller' => [new HomeController, 'showHome']
+    '_controller' => ["App\Controllers\HomeController" => "showHome"]
     ]));
 $routes->add('admin', new Route('/admin', [
-    '_controller' => [new HomeController, 'showAdmin']
+    '_controller' => ["App\Controllers\HomeController" => 'showAdmin']
     ]));
 $routes->add('new-message', new Route('/new', [
-    '_controller' => [new ContactsController, 'createNewMessage']
+    '_controller' => ["App\Controllers\ContactsController" => 'createNewMessage']
     ]));
 
 return $routes;

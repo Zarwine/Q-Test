@@ -3,5 +3,5 @@ namespace App\Controllers;
 
 class ContactsController 
 {
-
+    
 }

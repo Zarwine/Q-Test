@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container main-container">
     <h1>Liste des messages</h1>
     <table class="table table-hover">
         <thread>
@@ -17,11 +17,11 @@
                     <th scope="row" class="userid">
                         <?php echo $message->getId(); ?>
                     </th>
-                    <td class="username">
-                        <?php echo $message->getName(); ?>
+                    <td class="username resume">
+                        <abbr title="<?php echo $message->getName(); ?>"><?php echo $message->getName(); ?></abbr>
                     </td>
-                    <td class="useremail">
-                        <?php echo $message->getEmail(); ?>
+                    <td class="useremail resume">
+                        <a href="mailto:<?php echo $message->getEmail(); ?>"><?php echo $message->getEmail(); ?></a>
                     </td>
                     <td class="usermessage">
                         <?php echo $message->getMessage(); ?>

@@ -1,3 +1,10 @@
+/*-------------------------------------------Home Page-----------------------------------------*/
+.main-container {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    min-height: 75vh;
+}
+/*-------------------------------------------Admin table-----------------------------------------*/
 .table{
     table-layout: fixed;
     width: 100%;
@@ -22,4 +29,9 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+}
+/*-------------------------------------FOOTER------------------------------------------------*/
+footer {
+    height: 10vh;
+    background-color: #593196;
 }

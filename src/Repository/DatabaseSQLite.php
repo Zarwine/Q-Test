@@ -11,10 +11,9 @@ class DatabaseSQLite
 
     /**
      * Initialise la base de donné de développement ou de test
-     * @param string $credential
-     *      Contient les données de connection
      * @param string $type
-     *      Définis par "dev" ou "test" la base de donnée à créer
+     *      Définis par "DEVDB" ou "TESTDB" que l'on peut trouver dans le fichier config/database.php
+     *      la base de donnée à créer
      * 
      */
     public function __construct($type)

@@ -6,15 +6,21 @@ class Contact
 {
     private $id;
     private $name;
-    private $mail;
+    private $email;
     private $message;
     private $viewed;
     private $ip;
-    private $created;
+    private $createdAt;
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function setId(string $id): self
+    {
+        $this->id = $id;
+        return $this;
     }
 
     public function getName(): ?string
@@ -28,14 +34,14 @@ class Contact
         return $this;
     }
 
-    public function getMail(): ?string
+    public function getEmail(): ?string
     {
-        return $this->mail;
+        return $this->email;
     }
 
-    public function setMail(string $mail): self
+    public function setEmail(string $email): self
     {
-        $this->mail = $mail;
+        $this->email = $email;
         return $this;
     }
 
@@ -74,12 +80,12 @@ class Contact
 
     public function getCreated(): ?\DateTimeInterface
     {
-        return $this->created;
+        return $this->createdAt;
     }
 
-    public function setCreated(?\DateTimeInterface $created): self
+    public function setCreatedAt(?\DateTimeInterface $createdAt): self
     {
-        $this->created = $created;
+        $this->createdAt = $createdAt;
         return $this;
     }
 }

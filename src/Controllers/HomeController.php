@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Repository\ContactRepository;
 use Symfony\Component\HttpFoundation\Response;
 
 class HomeController
@@ -15,8 +16,10 @@ class HomeController
         return new Response(ob_get_clean());
     }
     public function showAdmin()
-    {
+    {    
+        $repo = new ContactRepository(DEVDB);
         ob_start();
+        $messages = $repo->findAll();
         include dirname(__DIR__) . '../../views/header.php';
         include sprintf(dirname(__DIR__) . '../../views/admin.php');
         include dirname(__DIR__) . '../../views/footer.php';

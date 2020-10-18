@@ -1,0 +1,25 @@
+.table{
+    table-layout: fixed;
+    width: 100%;
+}
+#t-id {
+    width: 3%;
+}
+#t-name,
+#t-mail {
+    width: 20%;
+}
+#t-message{
+    width: 50%
+}
+#t-btn-view-more {
+    width: 17%;
+}
+#t-btn-viewed {
+    width: 20%
+}
+.resume {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

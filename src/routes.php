@@ -6,6 +6,9 @@ use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
 
 $routes = new RouteCollection();
+$routes->add('', new Route('/', [
+    '_controller' => ["App\Controllers\HomeController" => "showHome"]
+    ]));
 $routes->add('home', new Route('/home', [
     '_controller' => ["App\Controllers\HomeController" => "showHome"]
     ]));

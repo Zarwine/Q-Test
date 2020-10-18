@@ -1,5 +1,6 @@
 <?php
 
+use App\Repository\DatabaseSQLite;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\HttpFoundation\Response;
@@ -7,8 +8,13 @@ use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 
 require dirname(__DIR__).'/vendor/autoload.php';
+require_once dirname(__DIR__).'/config/database.php';
+require_once dirname(__DIR__).'/migrations/create_contact_table.php';
 
 $routes = require __DIR__.'/../src/routes.php';
+
+$migration = new CreateContactTable(DEVDB);
+$migration->createTable();
 
 $request = Request::createFromGlobals();
 
@@ -34,18 +40,3 @@ try {
 }
 
 $response->send();
-
-//declaration of routes (read the README.md of https://github.com/symfony/routing)
-
-//execution of request (read the README.md of https://github.com/symfony/routing)
-
-
-//...
-//if ($parameters) {
-//    $response = null;//execute of request from controller 
-//}
-//else {
-//    $response = new Response('Content not found', Response::HTTP_NOT_FOUND, ['content-type' => 'text/html']);
-//}
-//
-//$response->send();

@@ -46,7 +46,7 @@ class ContactRepository extends DatabaseSQLite
         $req = $pdo->prepare($query);
         $req->bindValue(':id', $id, PDO::PARAM_INT);
         $req->execute();
-
+        
         $row = $req->fetch(PDO::FETCH_ASSOC);
         $message = new Contact();
         $message->setId($row['id']);

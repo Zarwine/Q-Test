@@ -4,13 +4,13 @@ namespace App\Repository;
 
 class Contact
 {
-    private $id;
-    private $name;
-    private $email;
-    private $message;
-    private $viewed;
-    private $ip;
-    private $createdAt;
+    public $id;
+    public $name;
+    public $email;
+    public $message;
+    public $viewed;
+    public $ip;
+    public $createdAt;
 
     public function getId(): ?int
     {
@@ -83,7 +83,7 @@ class Contact
         return $this->createdAt;
     }
 
-    public function setCreatedAt(?\DateTimeInterface $createdAt): self
+    public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
         return $this;

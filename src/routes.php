@@ -18,5 +18,8 @@ $routes->add('admin', new Route('/admin', [
 $routes->add('new-message', new Route('/new', [
     '_controller' => ["App\Controllers\ContactsController" => 'createNewMessage']
     ]));
+$routes->add('update-message', new Route('/update/{id}', [
+    '_controller' => ["App\Controllers\ContactsController" => 'toggleViewedMessageStatut']
+    ]));
 
 return $routes;

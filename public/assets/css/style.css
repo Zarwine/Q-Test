@@ -4,26 +4,39 @@
     margin-bottom: 5vh;
     min-height: 75vh;
 }
+.form-group textarea {
+    min-height: 6em;
+}
+.form-container,
+.home-img
+{
+    max-width: 1024px;
+    margin-top: 2em;
+}
 /*-------------------------------------------Admin table-----------------------------------------*/
 .table{
     table-layout: fixed;
     width: 100%;
 }
-#t-id {
+.t-id {
     width: 3%;
 }
-#t-name,
-#t-mail {
+.t-name,
+.t-mail {
     width: 20%;
 }
-#t-message{
+.t-message{
     width: 50%
 }
-#t-btn-view-more {
+.t-btn-view-more {
     width: 17%;
 }
-#t-btn-viewed {
+.t-btn-viewed {
     width: 20%
+}
+.td-btn,
+.td-btn-toggle {
+    min-height: 4em;
 }
 .resume {
     white-space: nowrap;

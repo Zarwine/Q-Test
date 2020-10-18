@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Services\Form;
 use App\Repository\ContactRepository;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -10,6 +11,8 @@ class HomeController
     public function showHome()
     {
         ob_start();
+        $form = new Form();
+        
         include dirname(__DIR__) . '../../views/header.php';
         include sprintf(dirname(__DIR__) . '../../views/home.php');
         include dirname(__DIR__) . '../../views/footer.php';

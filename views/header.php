@@ -23,7 +23,7 @@
             <a class="nav-link" href="home">Nous contacter<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="admin">Gestion des contacts</a>
+            <a class="nav-link" href="admin">Gestion des messages</a>
           </li>
       </div>
     </nav>

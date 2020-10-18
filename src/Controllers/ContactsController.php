@@ -30,38 +30,20 @@ class ContactsController
 
     public function toggleViewedMessageStatut(Request $request)
     {  
+        $id = $request->get('id');
+
         $manager = new ContactRepository(DEVDB);
 
-        $messages = $request->request->get("message");
-        $ids = array_keys($messages);
+        $message = $manager->find($id);
 
-        foreach ($ids as $id) {
-            //$message = new Contact();//->find($id);
-            $message = $manager->find($id);
-
-            if (!$message) {
-                echo "Message non trouvé";
-            }
+        if(!$message) {
+            echo "Message non trouvé";
+        } else {
             $message->setViewed( ! $message->getViewed() );
-
             $manager->updateViewed($message);
         }
 
-        if (isset($request->request)) {
-            if (!empty($request->request)) {
-
-                $username = $request->request->get("username");
-                $email = $request->request->get("email");
-                $message = $request->request->get("message");
-                $ip = $_SERVER['REMOTE_ADDR'];
-
-                $manager->create($username, $email, $message, $ip);
-            } else {
-                echo "Erreur";
-            }
-        }
-
-        header("Location: home");
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . "/admin");
     }
     
 }

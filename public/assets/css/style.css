@@ -7,14 +7,30 @@
 .form-group textarea {
     min-height: 6em;
 }
-.form-container,
-.home-img
-{
+.form-container {
     max-width: 1024px;
     margin-top: 2em;
 }
+.home-img {
+    max-width: 100%;
+    margin-top: 2em;
+}
+.home-p {
+max-width: 1024px;
+margin-top: 1em;
+padding: 1em;
+box-shadow: 1px 1px 5px 0 #969696;
+}
+.home-random-element {
+    display: flex;
+}
+.home-random-element p{
+    margin: 1em;
+    padding: 1em;
+    box-shadow: 1px 1px 5px 0 #969696;
+}
 /*-------------------------------------------Admin table-----------------------------------------*/
-.table{
+.table {
     table-layout: fixed;
     width: 100%;
 }
@@ -43,8 +59,17 @@
     text-overflow: ellipsis;
     overflow: hidden;
 }
-/*-------------------------------------FOOTER------------------------------------------------*/
+/*-------------------------------------------FOOTER------------------------------------------------*/
 footer {
     height: 10vh;
     background-color: #593196;
+}
+/*--------------------------------------------------------------------------------------------------*/
+/*---------------------------------------MEDIA QUERIES----------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 768px) {
+    .home-random-element {
+        flex-flow: row wrap;
+    }
 }

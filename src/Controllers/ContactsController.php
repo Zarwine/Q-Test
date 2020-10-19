@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers;
 
 use App\Repository\Contact;
@@ -8,11 +9,11 @@ use App\Repository\ContactRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
-class ContactsController 
+class ContactsController
 {
     public function createNewMessage(Request $request)
-    {  
-        
+    {
+
         if (isset($request->request)) {
             if (!empty($request->request)) {
                 $manager = new ContactRepository(DEVDB);
@@ -26,25 +27,25 @@ class ContactsController
                 $errors = [];
                 $canGoToDB = true;
 
-                array_push($errors , $validator->isName($username));
-                array_push($errors , $validator->isMail($email));
-                array_push($errors , $validator->isMessage($message));
+                array_push($errors, $validator->isName($username));
+                array_push($errors, $validator->isMail($email));
+                array_push($errors, $validator->isMessage($message));
 
-                foreach($errors as $error) {
-                    if($error != NULL)
-                    {
-                        session_start();
-                        $_SESSION['erreur'] = $error;
-                        $canGoToDB = false;                        
+                foreach ($errors as $error) {
+                    if ($error != NULL) {
+                        $canGoToDB = false;
                     }
                 }
 
-                if($canGoToDB === true) {
-                $manager->create($username, $email, $message, $ip);
+                if ($canGoToDB === true) {
+                    $manager->create($username, $email, $message, $ip);
                 } else {
-                    var_dump($errors);
+                    foreach ($errors as $error) {
+                        if ($error != NULL) {
+                            echo $error;
+                        }
+                    }
                 }
-
             } else {
                 echo "Erreur";
             }
@@ -55,21 +56,20 @@ class ContactsController
     }
 
     public function toggleViewedMessageStatut(Request $request)
-    {  
+    {
         $id = $request->get('id');
 
         $manager = new ContactRepository(DEVDB);
 
         $message = $manager->find($id);
 
-        if(!$message) {
+        if (!$message) {
             echo "Message non trouvé";
         } else {
-            $message->setViewed( ! $message->getViewed() );
+            $message->setViewed(!$message->getViewed());
             $manager->updateViewed($message);
         }
-        $response = new RedirectResponse("http://".$request->server->get('HTTP_HOST')."/admin");
+        $response = new RedirectResponse("http://" . $request->server->get('HTTP_HOST') . "/admin");
         $response->send();
     }
-    
 }

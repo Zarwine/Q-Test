@@ -15,7 +15,6 @@ class TableManager {
             })
         }
     }
-
 }
 
 let tableManager = new TableManager()

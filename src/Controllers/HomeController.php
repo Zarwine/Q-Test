@@ -11,8 +11,7 @@ class HomeController
     public function showHome()
     {
         ob_start();
-        $form = new Form();
-        
+        $form = new Form();        
         include dirname(__DIR__) . '../../views/header.php';
         include sprintf(dirname(__DIR__) . '../../views/home.php');
         include dirname(__DIR__) . '../../views/footer.php';

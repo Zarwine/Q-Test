@@ -4,7 +4,7 @@
     </div>
     <img class="home-img" src="https://picsum.photos/1024/512" />
     <div class="form-container">
-            <h3>Contactez nous</h3>
+            <h3>Contactez nous</h3>   
             <form action="new" method="POST">
                 <?php $form->setInput(
                  "name",

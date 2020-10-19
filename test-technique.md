@@ -85,4 +85,4 @@ $response->send();
 
 ## Conclusion
 Le projet devra être remis au sein d'un dépôt git avec un fichier README.md clair et concis donnant le plus d'informations possibles pour la bonne exécution du projet.
-Si des questions se présentent, je suis disponible par mail : patrick.farrugia@qwamplify.com.
+Si des questions se présentent, je suis disponible par mail : -------.

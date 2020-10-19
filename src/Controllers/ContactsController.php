@@ -6,6 +6,7 @@ use App\Services\Validator;
 use App\Controllers\HomeController;
 use App\Repository\ContactRepository;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class ContactsController 
 {
@@ -20,7 +21,7 @@ class ContactsController
                 $username = $request->request->get("username");
                 $email = $request->request->get("email");
                 $message = $request->request->get("message");
-                $ip = $_SERVER['REMOTE_ADDR'];
+                $ip = $request->getClientIp();
 
                 $errors = [];
                 $canGoToDB = true;
@@ -49,7 +50,8 @@ class ContactsController
             }
         }
 
-        header("Location: home");
+        $response = new RedirectResponse('home');
+        $response->send();
     }
 
     public function toggleViewedMessageStatut(Request $request)
@@ -66,8 +68,8 @@ class ContactsController
             $message->setViewed( ! $message->getViewed() );
             $manager->updateViewed($message);
         }
-
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . "/admin");
+        $response = new RedirectResponse("http://".$request->server->get('HTTP_HOST')."/admin");
+        $response->send();
     }
     
 }

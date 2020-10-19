@@ -20,7 +20,6 @@ class ContactRepository extends DatabaseSQLite
             $message->setMessage($row['message']);
             $message->setViewed($row['viewed']);
             $message->setIp($row['ip']);
-            //$message->setCreatedAt($row['created_at']);
             $messages[] = $message;
         };
         return $messages;

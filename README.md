@@ -1,7 +1,7 @@
 # Introduction 
-This PHP project is a simple website where client can fill form with name, email and message.
+This PHP project is a simple website where client can fill a form with name, email and message.
 
-There is a non protected back office where you can see and manager all messages.
+There is a non protected back office where you can see and manage all messages.
 
 You can find more informations at "test-technique.md".
 

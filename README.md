@@ -12,6 +12,4 @@ You can find more informations at "test-technique.md".
 
 # Use
 - To test the project: `./vendor/bin/phpunit ./tests`
-
-# Utilisation
 - To launch development server : `php -S 127.0.0.1:8000 -t public`

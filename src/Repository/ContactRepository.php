@@ -10,7 +10,7 @@ class ContactRepository extends DatabaseSQLite
     public function findAll()
     {
         $pdo = $this->pdo;
-        $query = "SELECT * FROM messages ORDER BY id";
+        $query = "SELECT * FROM messages ORDER BY id DESC";
         $req = $pdo->prepare($query);
         $req->execute();
         while ($row = $req->fetch(PDO::FETCH_ASSOC)) {

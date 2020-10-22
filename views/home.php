@@ -41,8 +41,9 @@
                 "textarea",
                 "text",
                 "message",
-                "Entrez votre message"
+                "Entrez votre message - 50 caractères minimum"
             ); ?>
+            <br>
             <button type="submit" class="btn btn-primary">Envoyer</button>
         </form>
     </div>

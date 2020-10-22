@@ -3,8 +3,7 @@
 use App\Repository\DatabaseSQLite;
 
 class CreateContactTable extends DatabaseSQLite
-{
-    
+{    
     public function createTable()
     {
         $this->pdo->query("CREATE TABLE IF NOT EXISTS messages ( 
@@ -16,6 +15,5 @@ class CreateContactTable extends DatabaseSQLite
             ip            VARCHAR( 15 ),
             created_at    DATETIME CURRENT_TIMESTAMP
         );");
-
     }
 }

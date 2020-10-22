@@ -1,7 +1,5 @@
 <?php
 
-use App\Controllers\HomeController;
-use App\Controllers\ContactsController;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
 

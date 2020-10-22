@@ -26,7 +26,7 @@
                                 <a href="mailto:<?php echo $message->getEmail(); ?>"><?php echo $message->getEmail(); ?></a>
                             </td>
                             <td class="usermessage">
-                                <?php echo $message->getMessage(); ?>
+                                <?php echo htmlspecialchars($message->getMessage(), ENT_QUOTES); ?>
                             </td>
                             <td class="view-more">
                                 <button class="btn btn-primary td-btn">Afficher plus</button>
@@ -70,7 +70,7 @@
                                 <a href="mailto:<?php echo $message->getEmail(); ?>"><?php echo $message->getEmail(); ?></a>
                             </td>
                             <td class="usermessage">
-                                <?php echo $message->getMessage(); ?>
+                                <?php echo htmlspecialchars($message->getMessage(), ENT_QUOTES); ?>
                             </td>
                             <td class="view-more">
                                 <button class="btn btn-primary td-btn">Afficher plus</button>

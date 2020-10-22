@@ -10,7 +10,6 @@ use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 require dirname(__DIR__).'/vendor/autoload.php';
 require_once dirname(__DIR__).'/config/database.php';
 require_once dirname(__DIR__).'/migrations/create_contact_table.php';
-
 $routes = require __DIR__.'/../src/routes.php';
 
 $migration = new CreateContactTable(DEVDB);
@@ -22,6 +21,8 @@ $context = new RequestContext();
 $context->fromRequest($request);
 
 $matcher = new UrlMatcher($routes, $context);
+
+include dirname(__DIR__) . '../views/header.php';
 
 try {
     $resultat = ($matcher->match($request->getPathInfo()));
@@ -38,5 +39,6 @@ try {
 } catch (Exception $exception) {
     $response = new Response('Une erreur est survenue', 500);
 }
-
 $response->send();
+
+include dirname(__DIR__) . '../views/footer.php';

@@ -4,13 +4,13 @@ namespace App\Repository;
 
 class Contact
 {
-    public $id;
-    public $name;
-    public $email;
-    public $message;
-    public $viewed;
-    public $ip;
-    public $createdAt;
+    private $id;
+    private $name;
+    private $email;
+    private $message;
+    private $viewed;
+    private $ip;
+    private $createdAt;
 
     public function getId(): ?int
     {

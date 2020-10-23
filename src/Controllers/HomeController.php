@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class HomeController
 {
-    public function showHome()
+    public function showHome(): object
     {
         ob_start();
         $form = new Form();  
@@ -16,7 +16,7 @@ class HomeController
         return new Response(ob_get_clean());
     }
     
-    public function showAdmin()
+    public function showAdmin(): object
     {    
         $repo = new ContactRepository(DEVDB);
         ob_start();

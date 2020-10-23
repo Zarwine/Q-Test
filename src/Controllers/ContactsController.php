@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class ContactsController
 {
-    public function createNewMessage(Request $request)
+    public function createNewMessage(Request $request): object
     {        
         if (isset($request->request)) {
             if (!empty($request->request)) {
@@ -51,7 +51,7 @@ class ContactsController
         return $response;        
     }
 
-    public function toggleViewedMessageStatut(Request $request)
+    public function toggleViewedMessageStatut(Request $request): object
     {
         $id = $request->get('id');
         $manager = new ContactRepository(DEVDB);

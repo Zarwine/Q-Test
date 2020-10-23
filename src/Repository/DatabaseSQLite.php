@@ -16,7 +16,7 @@ class DatabaseSQLite
      *      la base de donnée à créer
      * 
      */
-    public function __construct($type)
+    public function __construct(string $type)
     {
         try {
             $this->pdo = new PDO($type);

@@ -4,13 +4,30 @@ namespace App\Services;
 
 class Form
 {
-    public function setInput($id, $label, $elementType, $type, $name, $placeholder)
+    public function createInput(string $id, string $label, string $name, string $placeholder): void
     {
         ?>
         <div class="form-group">
             <label for="<?=$id?>"><?=$label?></label>
-            <<?=$elementType?> type="<?=$type?>" name="<?=$name?>" class="form-control" id="<?=$id?>" aria-describedby="nameHelp" placeholder="<?=$placeholder?>"></<?=$elementType?>>
+            <input type="text" name="<?=$name?>" class="form-control" id="<?=$id?>" aria-describedby="nameHelp" placeholder="<?=$placeholder?>" required></input>
         </div>
+        <?php
+    }
+
+    public function createTextArea(string $id, string $label, string $name, string $placeholder): void
+    {
+        ?>
+        <div class="form-group">
+            <label for="<?=$id?>"><?=$label?></label>
+            <textarea type="text" name="<?=$name?>" class="form-control" id="<?=$id?>" aria-describedby="nameHelp" placeholder="<?=$placeholder?>" minlength="50" required></textarea>
+        </div>
+        <?php
+    }
+
+    public function createSubmit(): void
+    {
+        ?>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
         <?php
     }
 }

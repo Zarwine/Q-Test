@@ -19,32 +19,26 @@
     <div class="form-container">
         <h3>Contactez nous</h3>
         <form action="new" method="POST">
-            <?php $form->setInput(
+            <?php $form->createInput(
                 "name",
                 "Nom",
-                "input",
-                "text",
                 "username",
                 "Entrez votre nom"
             ); ?>
-            <?php $form->setInput(
+            <?php $form->createInput(
                 "email",
                 "Adresse email",
-                "input",
-                "text",
                 "email",
                 "Entrez votre email"
             ); ?>
-            <?php $form->setInput(
+            <?php $form->createTextArea(
                 "message",
                 "Message",
-                "textarea",
-                "text",
                 "message",
                 "Entrez votre message - 50 caractères minimum"
             ); ?>
             <br>
-            <button type="submit" class="btn btn-primary">Envoyer</button>
+            <?php $form->createSubmit() ?>            
         </form>
     </div>
 </div>

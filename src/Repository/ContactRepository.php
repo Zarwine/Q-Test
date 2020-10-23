@@ -26,7 +26,7 @@ class ContactRepository extends DatabaseSQLite
         return $messages;
     }
 
-    public function create($username, $email, $message, $ip)
+    public function create(string $username, string $email, string $message, string $ip)
     {
         $pdo = $this->pdo;
         $query = "INSERT INTO messages (id, name, email, message, viewed, ip, created_at)
@@ -39,7 +39,7 @@ class ContactRepository extends DatabaseSQLite
         $req->execute();
     }
 
-    public function find($id)
+    public function find(int $id)
     {
         $pdo = $this->pdo;
         $query = "SELECT * FROM messages WHERE id = :id";
@@ -60,13 +60,13 @@ class ContactRepository extends DatabaseSQLite
         return $message;
     }
 
-    public function updateViewed($message)
+    public function updateViewed(object $message)
     {
         $pdo = $this->pdo;
         $query = "UPDATE messages SET 'viewed' = :viewed WHERE id = :id";
         $req = $pdo->prepare($query);
-        $req->bindValue(':viewed', $message->viewed, PDO::PARAM_INT);
-        $req->bindValue(':id', $message->id, PDO::PARAM_INT);
+        $req->bindValue(':viewed', $message->getViewed(), PDO::PARAM_INT);
+        $req->bindValue(':id', $message->getId(), PDO::PARAM_INT);
         $req->execute();
     }
 }
